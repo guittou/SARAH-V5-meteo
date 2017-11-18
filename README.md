@@ -4,25 +4,25 @@
 
 `apikey`
 
-<dd>**apikey** de votre compte **openweathermap** à renseigner dans la configuration du module</dd>
+**apikey** de votre compte **openweathermap** à renseigner dans la configuration du module
 
 - `msg.payload.options.plugin`:
 
-<dd>à utiliser avec un module **switch** pour rediriger vers le bon plugin</dd>
+à utiliser avec un module **switch** pour rediriger vers le bon plugin
 
-<dd>valeur de `out.action.plugin` du fichier **sarah-meteo.xml**</dd>
+valeur de `out.action.plugin` du fichier **sarah-meteo.xml**
 
 - `msg.payload.options.day`
 
-<dd>nom du jours ou 0 pour aujourd'hui 1 pour demain et 2 pour après-demain</dd>
+nom du jours ou 0 pour aujourd'hui 1 pour demain et 2 pour après-demain
 
-<dd>valeur de `out.action.day` du fichier **sarah-meteo.xml**</dd>
+valeur de `out.action.day` du fichier **sarah-meteo.xml**
 
 - `msg.payload.options.id`
 
-<dd>**id** de la ville openweathermap (rechercher sur [http://openweathermap.org/find](http://openweathermap.org/find))</dd>
+**id** de la ville openweathermap (rechercher sur [http://openweathermap.org/find](http://openweathermap.org/find))
 
-<dd>valeur de `out.action.id` du fichier **sarah-meteo.xml**</dd>
+valeur de `out.action.id` du fichier **sarah-meteo.xml**
 
 ### Outputs
 
@@ -32,15 +32,15 @@
 
 - `msg.weather`: pour réutilisation eventuelle avec :"
 
-<dd>--->`.tmin`: temperature min</dd>
+--->`.tmin`: temperature min
 
-<dd>--->`.tmax`: temperature max</dd>
+--->`.tmax`: temperature max
 
-<dd>--->`.humidity`: Pourcentage d'humiditée moyen</dd>
+--->`.humidity`: Pourcentage d'humiditée moyen
 
-<dd>--->`.speedwind`: Vitesse du vent moyenne en km/h</dd>
+--->`.speedwind`: Vitesse du vent moyenne en km/h
 
-<dd>--->`.prevision`: Prévision méteo</dd>
+--->`.prevision`: Prévision méteo
 
 ### Détails
 
