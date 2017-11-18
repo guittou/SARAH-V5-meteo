@@ -1,0 +1,82 @@
+<script type="text/javascript">
+    RED.nodes.registerType('sarah-meteo',{
+        category: 'SARAH',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+			apikey: {value:"", required:true},
+			
+        },
+        inputs:1,
+        outputs:1,
+        icon: "white-globe.png",
+        label: function() {
+            return this.name||"sarah-meteo";
+			return this.apykey||"sarah-meteo";
+			
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="sarah-meteo">
+	<div class="form-row">
+		<label for="node-input-name"><i class="icon-tag"></i> Name</label>
+		<input type="text" id="node-input-name" placeholder="Name">
+	</div>
+	
+    <div class="form-row">
+        <label for="node-input-apikey"><i class="fa fa-key"></i> api-key</label>
+        <input type="text" id="node-input-apikey" placeholder="Openweathermap API KEY">
+    </div>
+	
+
+</script>
+
+<script type="text/x-red" data-help-name="sarah-meteo">
+
+	<h3>Inputs</h3>
+	<p><code>apikey</code></p>
+	<dd><b>apikey</b> de votre compte <b>openweathermap</b> à renseigner dans la configuration du module</dd>
+	<p></p>
+	<p> - <code>msg.payload.options.plugin</code>:</p>
+	<dd>à utiliser avec un module <b>switch</b> pour rediriger vers le bon plugin</dd>
+	<p></p>
+	<dd>valeur de <code>out.action.plugin</code> du fichier <b>sarah-meteo.xml</b></dd>
+	<p></p>
+	<p>	- <code>msg.payload.options.day</code></p>
+	<dd>nom du jours ou 0 pour aujourd'hui 1 pour demain et 2 pour après-demain</dd>
+	<p></p>
+	<dd>valeur de <code>out.action.day</code> du fichier <b>sarah-meteo.xml</b></dd>
+	<p></p>
+	<p>	- <code>msg.payload.options.id</code></p>
+	<dd><b>id</b> de la ville openweathermap  (rechercher sur <a href="http://openweathermap.org/find">http://openweathermap.org/find</a>)</dd>
+	<p></p>
+	<dd>valeur de <code>out.action.id</code> du fichier <b>sarah-meteo.xml</b></dd>
+	<p></p>
+	<h3>Outputs</h3>
+	<p>- <code>msg.payload</code>: renvoyé par win-sarah</p>
+	<p>- <code>msg.speak</code>: texte à lire par win-speak(ou autre)</p>
+	<p>- <code>msg.weather</code>: pour réutilisation eventuelle avec :"</p>
+	<dd>---><code>.tmin</code>: temperature min</dd>
+	<dd>---><code>.tmax</code>: temperature max</dd>
+	<dd>---><code>.humidity</code>: Pourcentage d'humiditée moyen</dd>
+	<dd>---><code>.speedwind</code>: Vitesse du vent moyenne en km/h</dd>
+	<dd>---><code>.prevision</code>: Prévision méteo</dd>
+	<p></p>
+	<h3>Détails</h3>
+	<p>module à associer aux modules SARAH </p>
+	<p>		- win-sarah </p>
+	<p>		- win-speak </p>
+	<p></P>
+	<p>Copier le fichier xml <b>./grammar/sarah-meteo.xml</b> dans le dossier grammar configuré sur le module <b>win-sarah</b></p>
+	<p></p>
+	<p>dans le cas de plusieur plugin utiliser un module <b>switch</b> avec comme discriminant <code>msg.payload.options.plugin</code> renvoyé par <b>win-sarah</b> (ici <b>meteo</b>)</p>
+	<p></p>
+	<h3>Utilisation:</h3>
+	<p></p>
+	<p>sarah quelle est la météo à Sannois</p>
+	<p>sarah quelle est la météo demain à Sannois</p>
+	<p>sarah quelle est la météo après demain à Sannois</p>
+	<p>sarah quelle est la météo lundi à Sannois</p>
+	
+</script>

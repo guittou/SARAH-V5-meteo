@@ -1,0 +1,44 @@
+<grammar version="1.0" xml:lang="fr-FR" mode="voice" root="ruleMeteo" xmlns="http://www.w3.org/2001/06/grammar" tag-format="semantics/1.0">
+  <rule id="ruleMeteo" scope="public">
+    <example>Sarah quelle est la météo demain à Sannois</example>
+    <tag>out.action=new Object(); </tag>
+   
+	<tag>out.action.plugin="meteo";</tag>
+	
+    <item>sarah</item>
+    
+    <one-of>
+      <item>quelle est la météo</item>
+      <item>quelle est le temps</item>
+    </one-of>
+
+    <item repeat="0-1">
+      <one-of>
+        <item>aujourd'hui<tag>out.action.day="0";</tag></item>
+        <item>demain<tag>out.action.day="1";</tag></item>
+        <item>après demain<tag>out.action.day="2";</tag></item>
+        <item>lundi<tag>out.action.day="lundi";</tag></item>
+        <item>mardi<tag>out.action.day="mardi";</tag></item>
+        <item>mercredi<tag>out.action.day="mercredi";</tag></item>
+        <item>jeudi<tag>out.action.day="jeudi";</tag></item>
+        <item>vendredi<tag>out.action.day="vendredi";</tag></item>
+        <item>samedi<tag>out.action.day="samedi";</tag></item>
+        <item>dimanche<tag>out.action.day="dimanche";</tag></item>
+      </one-of>
+    </item>
+ 
+
+    <item repeat="0-1">
+      <item>à</item>
+      <one-of>
+        <item>Sannois<tag>out.action.id="2976179";</tag></item>
+        <item>Bordeaux<tag>out.action.id="3031582";</tag></item>
+        <item>Rennes<tag>out.action.id="2983990";</tag></item>
+        <item>Saint Malo<tag>out.action.id="2978640";</tag></item>
+        <item>Paris<tag>out.action.id="2988507";</tag></item>
+      </one-of>
+    </item>
+    
+    
+  </rule> 
+</grammar>

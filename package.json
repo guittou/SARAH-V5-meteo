@@ -1,0 +1,17 @@
+{
+    "name"          : "Sarah-meteo",
+    "version"       : "0.1",
+    "description"   : "meteo pour SARAH ",
+    "dependencies"  : {
+    },
+    "keywords": [ "sarah", "meteo"],
+    "node-red"      : {
+        "version": ">=0.1",
+        "nodes"     : {
+            "sarah-meteo": "sarah-meteo.js"
+        }
+    },
+    "author": {
+        "name": "Guirec ANDRE",
+    }
+}
