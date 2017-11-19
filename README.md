@@ -14,7 +14,7 @@ Renseigner la clé API openweathermap obtenu après inscription le site [openwea
 
 Copier le fichier xml **./grammar/sarah-meteo.xml** dans le dossier grammar configuré sur le module **win-sarah**
 
-dans le cas de plusieur plugin utiliser un module **switch** avec comme discriminant `msg.payload.options.plugin` renvoyé par **win-sarah** (ici **meteo**)
+dans le cas de plusieurs plugins utiliser un module **switch** avec comme discriminant `msg.payload.options.plugin` renvoyé par **win-sarah** (ici **meteo**)
 
 ![GitHub Logo](/images/switch.png)
 
